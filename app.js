@@ -7,6 +7,10 @@ const mongoose = require('mongoose');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 
+const Volunteer = require('./models/volunteer');
+const Group = require('./models/group');
+const Village = require('./models/village');
+
 const app = express();
 require('dotenv').config();
 let db_opts = {
