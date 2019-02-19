@@ -15,4 +15,4 @@ const volunteerSchema = new Schema({
   updated_at: Date
 });
 
-exports.module = mongoose.model('Volunteer', volunteerSchema);
+module.exports = mongoose.model('Volunteer', volunteerSchema);

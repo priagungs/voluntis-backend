@@ -21,7 +21,6 @@ const villageStateSchema = new Schema({
   picture: String,
   group: {type: Schema.Types.ObjectId, ref: 'Group'},
   created_at: {type: Date, default: Date.now},
-  updated_at: Date
 }, {_id: false});
 
 const villageSchema = new Schema({
@@ -38,7 +37,8 @@ const villageSchema = new Schema({
     get: v => Math.round(v),
     set: v => Math.round(v)
   },
-  village_states: [villageStateSchema]
+  village_states: [villageStateSchema],
+  current_group: {type: Schema.Types.ObjectId, ref: 'Group'}
 });
 
-exports.module = mongoose.model('Village', villageSchema);
+module.exports = mongoose.model('Village', villageSchema);
